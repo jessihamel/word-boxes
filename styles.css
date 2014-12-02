@@ -70,6 +70,7 @@ h1 {
 
 #key {
   margin-left: 10%;
+  width: 80%;
   font-size: 1.2em;
   font-weight: bold;
   letter-spacing: 1px;
@@ -86,4 +87,20 @@ h1 {
   display: block;
   height: 15px;
   width: 15px;
+  margin-right: .8em;
   }
+
+#key div {
+  line-height: 1em;
+}
+
+#ham {
+  clear: both;
+  position: relative;
+  left: 50%;
+  margin-left: -80px;
+}
+
+#ham img {
+  margin-top: 50px;
+}

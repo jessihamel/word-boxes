@@ -9,7 +9,6 @@ function color(code) {
 }
 
 
-
 function makeSquares(csv, containerdiv) {
   d3.csv(csv, function(data) {
 
@@ -38,8 +37,30 @@ function makeSquares(csv, containerdiv) {
       .duration(500)
       .style("opacity", 0)
       .remove();
+      })
+    .on("click", function(d) {
+      thisCode = d.code
+      thisWord = d.word
+      d3.select("#graphic")
+        .selectAll("span")
+        .style("background", function(d) {
+          if (d.code == thisCode)
+            {return "#EC059E"}
+          else
+            {return color(d.code)}
+           });
+      d3.select("#choice")
+        .text(d.word)
     });
-
+  // reset function
+    d3.select("#key")
+      .on("click", function(d) {
+        d3.select("#graphic")
+          .selectAll("span")
+          .style("background", function(d) { return color(d.code); });
+        d3.select("#choice")
+          .text("(Click on any box to see how often that word appears in the text.)");
+      })
   });
 }
 
